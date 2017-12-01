@@ -15,6 +15,7 @@
   get_url:
     url: "{{ item.0.url }}"
     dest: "/opt/stack/glance-images/{{ item.0.filename }}"
+    validate_certs: "{{ ansible_python_version|version_compare('2.7.9', '<') | ternary(False, True) }}"
   run_once: True
   when: item.1
   with_together:

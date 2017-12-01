@@ -126,6 +126,7 @@ common:
         - cryptsetup
         - libffi-dev
         - libssl-dev
+        - libxml2=2.9.1+dfsg1-3ubuntu4.10
         - libxml2-dev
         - libxslt1-dev
       extra_packages:

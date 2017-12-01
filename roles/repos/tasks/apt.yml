@@ -2,7 +2,7 @@
 - name: add any dependent repository keys from url
   apt_key:
     url: "{{ item.key_url }}"
-    validate_certs: "{{ item.validate_certs|default(omit) }}"
+    validate_certs: "{{ ansible_python_version|version_compare('2.7.9', '<') | ternary(False, item.validate_certs|default(omit)) }}"
   #no_log: true
   with_items: "{{ repos }}"
   when:

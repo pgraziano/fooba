@@ -13,6 +13,7 @@
 
   - name: fetch novnc tarball
     get_url: url={{ nova.novnc_url }} dest=/opt/stack/novnc/novnc-0.5.1.tgz
+             validate_certs="{{ ansible_python_version|version_compare('2.7.9', '<') | ternary(False, True) }}"
 
   - name: unzip novnc tarball
     unarchive: src=/opt/stack/novnc/novnc-0.5.1.tgz dest=/opt/stack/novnc/ copy=no
