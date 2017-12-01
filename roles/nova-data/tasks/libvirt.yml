@@ -12,9 +12,10 @@
     - cpu-checker
     - libvirt-bin={{ nova.libvirt_bin_version }}
     - python-libvirt={{ nova.python_libvirt_version }}
-    - qemu-kvm={{ nova.qemu_kvm_version }}
-    - "{{ nova.qemu_system_package }}={{ nova.qemu_kvm_version }}"
+    - qemu-block-extra={{ nova.qemu_kvm_version }}
     - qemu-system-common={{ nova.qemu_kvm_version }}
+    - "{{ nova.qemu_system_package }}={{ nova.qemu_kvm_version }}"
+    - qemu-kvm={{ nova.qemu_kvm_version }}
     - open-iscsi
     - libvirt-dev={{ nova.libvirt_bin_version }}
     - pkg-config
