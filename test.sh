@@ -61,5 +61,5 @@ if [[ "${INSTALL_METHOD}" == "package" ]]; then
     echo "openstack_package_version: '${PACKAGE_VERSION}'" >> envs/example/test/group_vars/all.yml
 fi
 test/run deploy ${EXTRA_VARS}
-test/run test
-test/run rally --extra-vars "build_tag=${BUILD_TAG} workspace=${WORKSPACE}"
+##test/run test
+##test/run rally --extra-vars "build_tag=${BUILD_TAG} workspace=${WORKSPACE}"
